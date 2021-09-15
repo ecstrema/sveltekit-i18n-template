@@ -1,0 +1,16 @@
+{
+  "name": "messageformat-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:messages": "messageformat messages/ --outfile=messages.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@messageformat/cli": "^3.0.1",
+    "@messageformat/core": "^3.0.0"
+  }
+}

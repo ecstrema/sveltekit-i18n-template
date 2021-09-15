@@ -1,0 +1,9 @@
+{
+    "plain": "ES: Some text without interpolations",
+    "interpolated": "ES: A text where I interpolate {count} times",
+    "time": "ES: Now is {now, time}",
+    "number": "ES: My favorite number is {n, number}",
+    "pluralized": "ES: I have {count, plural, =1 {one cat} other {{count} cats}}",
+    "pluralized-with-hash": "ES: I have {count, plural, one {just # cat} other {# cats}}",
+    "selected": "ES: {gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}"
+}

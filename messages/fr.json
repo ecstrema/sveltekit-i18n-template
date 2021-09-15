@@ -1,0 +1,9 @@
+{
+    "plain": "FR: Some text without interpolations",
+    "interpolated": "FR: A text where I interpolate {count} times",
+    "time": "FR: Now is {now, time}",
+    "number": "FR: My favorite number is {n, number}",
+    "pluralized": "FR: I have {count, plural,=1 {one cat} other {{count} cats}}",
+    "pluralized-with-hash": "FR: I have {count, plural, one {just # cat} other {# cats}}",
+    "selected": "FR: {gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}"
+}
