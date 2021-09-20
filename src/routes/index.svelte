@@ -15,9 +15,9 @@ import { get } from "svelte/store";
 <h1>Current Language: {$locale}</h1>
 
 <p>{$t("plain")}</p>
-<p>{$t("interpolated", {count: 10})}</p>
+<p>{$t("interpolated", {count: 10 })}</p>
 <p>{$t("time", {now: Date.now()})}</p>
-<p>{$t("number")}</p>
-<p>{$t("pluralized")}</p>
-<p>{$t("pluralized-with-hash")}</p>
-<p>{$t("selected")}</p>
+<p>{$t("number", {n: 10})}</p>
+<p>{$t("pluralized", {count: 10})}</p>
+<p>{$t("pluralized-with-hash", {count: 10})}</p>
+<p>{$t("selected", {gender: ""})}</p>
