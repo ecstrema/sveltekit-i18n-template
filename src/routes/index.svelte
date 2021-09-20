@@ -1,2 +1,23 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+import { get } from "svelte/store";
+
+    import { t, locale } from "../lib/i18n"
+
+    function changeLanguage() {
+        if ($locale == "en") $locale = "fr";
+        else if ($locale == "fr") $locale = "es";
+        else $locale = "en";
+    }
+</script>
+
+<button on:click={changeLanguage}>Next Language</button>
+
+<h1>Current Language: {$locale}</h1>
+
+<p>{$t("plain")}</p>
+<p>{$t("interpolated")}</p>
+<p>{$t("time")}</p>
+<p>{$t("number")}</p>
+<p>{$t("pluralized")}</p>
+<p>{$t("pluralized-with-hash")}</p>
+<p>{$t("selected")}</p>
