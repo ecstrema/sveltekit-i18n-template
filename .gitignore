@@ -3,4 +3,4 @@ node_modules
 /build
 /.svelte-kit
 /package
-static/translations.js
+src/generated/
