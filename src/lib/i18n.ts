@@ -7,7 +7,9 @@ export const locale = writable("en");
 
 export const t = derived(locale, ($locale: string) => {
     const localeTranslations = translations[$locale];
-    return (translation: string, ...args: unknown[]) => {
+    return (translation: string, args?: unknown) => {
+        console.log(args);
+        console.log(localeTranslations[translation])
         return localeTranslations[translation](args);
     }
 })
