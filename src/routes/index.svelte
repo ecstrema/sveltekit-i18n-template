@@ -1,6 +1,5 @@
 <script lang="ts">
-import { get } from "svelte/store";
-
+    import { onDestroy } from "svelte";
     import { t, locale } from "../lib/i18n"
 
     function changeLanguage() {
@@ -8,6 +7,10 @@ import { get } from "svelte/store";
         else if ($locale == "fr") $locale = "es";
         else $locale = "en";
     }
+
+    let now = Date.now();
+    const timer = setInterval(() => now = Date.now(), 1000);
+    onDestroy(() => clearInterval(timer));
 </script>
 
 <button on:click={changeLanguage}>Next Language</button>
@@ -16,7 +19,7 @@ import { get } from "svelte/store";
 
 <p>{$t("plain")}</p>
 <p>{$t("interpolated", {count: 10 })}</p>
-<p>{$t("time", {now: Date.now()})}</p>
+<p>{$t("time", {now: now})}</p>
 <p>{$t("number", {n: 10})}</p>
 <p>{$t("selected", {gender: "male"})}</p>
 <p>{$t("pluralized", {count: 10})}</p>
