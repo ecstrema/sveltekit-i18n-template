@@ -17,7 +17,7 @@
 
 <h1>Current Language: {$locale}</h1>
 
-<p>{$t("plain")}</p>
+<p>{$t("Hello World")}</p> <!-- Note that this one doesn't need an english translation, because the source text is the translation. -->
 <p>{$t("interpolated", {count: 10 })}</p>
 <p>{$t("time", {now: now})}</p>
 <p>{$t("number", {n: 10})}</p>

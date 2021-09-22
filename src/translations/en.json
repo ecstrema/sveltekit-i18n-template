@@ -1,5 +1,4 @@
 {
-    "plain": "EN: Some text without interpolations",
     "interpolated": "EN: A text where I interpolate {count} times",
     "time": "EN: Now is {now, time}",
     "number": "EN: My favorite number is {n, number}",

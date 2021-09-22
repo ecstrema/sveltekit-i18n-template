@@ -5,6 +5,8 @@
     import { getStores } from "$app/stores";
     import { locale } from "$lib/i18n";
 
+    const { page } = getStores();
+
     $locale = "fr";
 
     const translationMap = {
@@ -14,7 +16,6 @@
         // etc.
     }
 
-    const { page } = getStores();
 
     let currentPage = $page.params.path;
     if (!currentPage || !Object.hasOwnProperty.call(translationMap, currentPage)) {
