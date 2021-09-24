@@ -1,8 +1,10 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
-    import { t, locale } from "../lib/i18n"
+    import { t, locale } from "../lib/i18n";
 
-    function changeLanguage() {
+    const a = $t("plain")
+
+    function changeLanguage(): void {
         if ($locale == "en") $locale = "fr";
         else if ($locale == "fr") $locale = "es";
         else $locale = "en";

@@ -52,6 +52,7 @@ export const t = derived(locale, ($locale: Locale) => {
                 targetTranslations = translations[sourceLocale];
                 return translate(translation, obj);
             }
+            return translation;
         }
         type _fn = (arg?: {[key: string]: number | string;}) => string;
         return (targetTranslations[translation] as _fn)(obj);
