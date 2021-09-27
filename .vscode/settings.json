@@ -4,5 +4,8 @@
     ],
     "i18n-ally.sourceLanguage": "en",
     "i18n-ally.keystyle": "flat",
-    "i18n-ally.disablePathParsing": true
+    "i18n-ally.disablePathParsing": true,
+    "cSpell.words": [
+        "messageformat"
+    ]
 }

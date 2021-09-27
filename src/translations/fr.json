@@ -1,12 +1,13 @@
 {
   "Hello World": "Bonjour Monde",
-  "plain": "FR: Some text without interpolations",
-  "interpolated": "FR: A text where I interpolate {count} times",
-  "time": "FR: Now is {now, time}",
-  "number": "FR: My favorite number is {n, number}",
-  "pluralized": "FR: I have {count, plural,=1 {one cat} other {{count} cats}}",
-  "pluralized-with-hash": "FR: I have {count, plural, one {just # cat} other {# cats}}",
-  "selected": "FR: {gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}",
+  "plain": "Du texte sans interpolation",
+  "interpolated": "Du texte ou j'interpole {count} fois",
+  "time": "Il est maintenant {now, time}",
+  "number": "Mon nombre préféré est {n, number}",
+  "pluralized": "J'ai {count, plural,=1 {un chat} other {{count} chats}}",
+  "pluralized-with-hash": "{count, plural,=0 {Je n'ai pas de chat} =1 {J'ai juste # chat} other {J'ai # chats}}",
+  "selected": "{gender, select, male {C'est un bon garçon} female {C'est une bonne fille} other {Ce sont de bonnes personnes}}",
   "Error": "Erreur",
-  "About": "A Propos"
+  "About": "À Propos",
+  "map": "Carte"
 }

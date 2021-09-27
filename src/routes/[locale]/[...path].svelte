@@ -2,7 +2,7 @@
     import Index from "../index.svelte";
     import About from "../about.svelte";
     import Map from "../map.svelte";
-    import Four04 from "../__error.svelte";
+    import Error from "../../components/error.svelte";
     import { locale, sourceLocale } from "$lib/i18n";
 
     let pageItem = Index;
@@ -21,7 +21,7 @@
 
     export async function load({ page }) {
         const currentLocale = page?.params?.locale;
-        if (currentLocale == sourceLocale) {
+        if (currentLocale === sourceLocale) {
             return {
                 status: 302,
                 redirect: "/" + page?.params?.path
@@ -44,7 +44,7 @@
                     }
                 } // else pageItem = Index -> Default;
             } else {
-                pageItem = Four04;
+                pageItem = Error;
             }
         } // else pageItem = Index -> Default;
 

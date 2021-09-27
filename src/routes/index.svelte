@@ -4,18 +4,11 @@
 
     const a = $t("plain")
 
-    function changeLanguage(): void {
-        if ($locale == "en") $locale = "fr";
-        else if ($locale == "fr") $locale = "es";
-        else $locale = "en";
-    }
-
     let now = Date.now();
     const timer = setInterval(() => now = Date.now(), 1000);
     onDestroy(() => clearInterval(timer));
 </script>
 
-<button on:click={changeLanguage}>Next Language</button>
 
 <h1>Current Language: {$locale}</h1>
 
