@@ -9,5 +9,5 @@
   "selected": "{gender, select, male {C'est un bon garçon} female {C'est une bonne fille} other {Ce sont de bonnes personnes}}",
   "Error": "Erreur",
   "About": "À Propos",
-  "map": "Carte"
+  "Map": "Carte"
 }

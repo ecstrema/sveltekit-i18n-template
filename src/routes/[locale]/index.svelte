@@ -1,14 +1,11 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
-    import { t, locale } from "../lib/i18n";
-
-    const a = $t("plain")
+    import { t, locale } from "$lib/i18n";
 
     let now = Date.now();
     const timer = setInterval(() => now = Date.now(), 1000);
     onDestroy(() => clearInterval(timer));
 </script>
-
 
 <h1>Current Language: {$locale}</h1>
 

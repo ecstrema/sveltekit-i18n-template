@@ -5,8 +5,7 @@
     let lastLocale = $locale;
 
     function localizedPath(path: string, lastLocale: string, newLocale: string): string {
-        const realPath = lastLocale === sourceLocale ? path : path.substring(lastLocale.length + 1);
-        return newLocale === sourceLocale ? realPath : ("/" + newLocale + realPath);
+        return "/" + newLocale + path.substring(lastLocale.length + 1);
     }
 
     let unsubscribe = () => {};

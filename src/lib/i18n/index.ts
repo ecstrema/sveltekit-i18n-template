@@ -39,8 +39,9 @@ export const t = derived(locale, ($locale: Locale) => {
     return function translate<Key extends LocaleKey>(translation: Key, obj?: LocaleParams<Key>): string {
         if (!Object.prototype.hasOwnProperty.call(targetTranslations, translation)) {
             if ($locale === sourceLocale) return translation;
-            else if (Object.hasOwnProperty.call(translations, sourceLocale)) {
-                console.error(`Key "${translation}" not present in locale "${$locale}", trying in source locale ("${sourceLocale}")`);
+            if (Object.hasOwnProperty.call(translations, sourceLocale)) {
+                if (targetTranslations === translations[sourceLocale]) return translation;
+                console.error(`Key "${translation}" not present in locale "${$locale}", falling back to source locale ("${sourceLocale}")`);
                 targetTranslations = translations[sourceLocale];
                 return translate(translation, obj);
             }
@@ -55,7 +56,6 @@ export const t = derived(locale, ($locale: Locale) => {
  * Pushes the new URL to history.
  */
 export function changeURL(url: string): void {
-    console.log(url);
     if (typeof history.pushState !== 'function') {
         window.location.assign(url);
         return;

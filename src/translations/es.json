@@ -8,6 +8,5 @@
   "pluralized-with-hash": "ES: I have {count, plural, one {just # cat} other {# cats}}",
   "selected": "ES: {gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}",
   "Error": "404",
-  "About": "Informacion",
-  "map": "carta"
+  "About": "Informacion"
 }
