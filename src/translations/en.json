@@ -4,5 +4,9 @@
   "number": "My favorite number is {n, number}",
   "pluralized": "I have {count, plural, =1 {one cat} other {{count} cats}}",
   "pluralized-with-hash": "I have {count, plural, one {just # cat} other {# cats}}",
-  "selected": "{gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}"
+  "selected": "{gender, select, male {He is a good boy} female {She is a good girl} other {They are good fellas}}",
+  "English": "French",
+  "Accueil": "Home",
+  "Documents": "Documents",
+  "Contact": "Contact"
 }

@@ -1,6 +1,5 @@
 {
   "Hello World": "Bonjour Monde",
-  "plain": "Du texte sans interpolation",
   "interpolated": "Du texte ou j'interpole {count} fois",
   "time": "Il est maintenant {now, time}",
   "number": "Mon nombre préféré est {n, number}",
@@ -9,5 +8,7 @@
   "selected": "{gender, select, male {C'est un bon garçon} female {C'est une bonne fille} other {Ce sont de bonnes personnes}}",
   "Error": "Erreur",
   "About": "À Propos",
-  "Map": "Carte"
+  "Map": "Carte",
+  "French": "English",
+  "Home": "Acceuil"
 }

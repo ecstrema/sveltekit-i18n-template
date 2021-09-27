@@ -17,14 +17,6 @@
     });
 
     onDestroy(unsubscribe);
-
-    function changeLanguage(): void {
-        if ($locale === "en") $locale = "fr";
-        else if ($locale === "fr") $locale = "es";
-        else $locale = "en";
-    }
 </script>
-
-<button on:click={changeLanguage}>Next Language</button>
 
 <slot/>
