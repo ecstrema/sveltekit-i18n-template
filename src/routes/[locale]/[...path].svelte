@@ -1,51 +1,32 @@
 <script context="module" lang="ts">
     import Index from "../index.svelte";
-    import About from "../about.svelte";
-    import Map from "../map.svelte";
     import Error from "../../components/error.svelte";
-    import { locale, sourceLocale } from "$lib/i18n";
+    import { sourceLocale, locale } from "$lib/i18n";
+    import translations from "../../generated/translations";
 
     let pageItem = Index;
-    const translationMap = {
-        "fr": {
-            "index": Index,
-            "apropos": About,
-            "carte": Map,
-        },
-        "es": {
-            "index": Index,
-            "informacion": About,
-            "carta": Map,
-        }
-    }
 
     export async function load({ page }) {
         const currentLocale = page?.params?.locale;
+        const path = page?.params?.path;
         if (currentLocale === sourceLocale) {
             return {
                 status: 302,
-                redirect: "/" + page?.params?.path
+                redirect: "/" + path
             };
         }
         if (currentLocale) {
-            if (Object.hasOwnProperty.call(translationMap, currentLocale)) {
-                locale.set(currentLocale);
-
-                const currentPage = page?.params?.path;
-                if (currentPage) {
-                    const trs = translationMap[currentLocale];
-                    if (Object.hasOwnProperty.call(trs, currentPage)) {
-                        pageItem = trs[currentPage];
-                    } else {
-                        return {
-                            status: 302,
-                            redirect: "/" + currentPage
-                        };
+            if(path) {
+                if (Object.prototype.hasOwnProperty.call(translations, currentLocale)) {
+                    locale.set(currentLocale);
+                    try {
+                        console.log(path);
+                        pageItem = await import(/* @vite-ignore */ `../${path}.svelte`);
+                    } catch (error) {
+                        pageItem = Error;
                     }
-                } // else pageItem = Index -> Default;
-            } else {
-                pageItem = Error;
-            }
+                }
+            } // else pageItem = Index -> Default
         } // else pageItem = Index -> Default;
 
         return {
