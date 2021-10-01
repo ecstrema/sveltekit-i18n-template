@@ -1,9 +1,8 @@
 <script lang="ts">
-import { goto } from "$app/navigation";
-
+    import { goto } from "$app/navigation";
     import { getStores } from "$app/stores";
     import { locale } from "$lib/i18n";
-    import { onDestroy, onMount } from "svelte";
+    import { onDestroy,onMount } from "svelte";
 
     let lastLocale = $locale;
 
