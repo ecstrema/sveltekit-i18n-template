@@ -5,6 +5,7 @@
     "dev": "concurrently -n kit,i18n \"pnpm run watch:translations\" \"pnpm run dev:kit\"",
     "dev:kit": "svelte-kit dev",
     "build": "pnpm run build:translations && svelte-kit build",
+    "rebuild": "pnpm run clean && pnpm run build",
     "clean": "rm -rf .svelte-kit && rm -rf build && rm src/generated/translations.ts",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
