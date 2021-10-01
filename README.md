@@ -14,9 +14,7 @@ Internationalization-enabled svelte-kit template with built-in i18n routing.
 ## Using the template
 
 [Use this template](https://github.com/Marr11317/sveltekit-i18n-template/generate)
-
 or
-
 [Download zip](https://github.com/Marr11317/sveltekit-i18n-template/archive/refs/heads/main.zip)
 
 ## Documentation
