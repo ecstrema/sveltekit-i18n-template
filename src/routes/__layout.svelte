@@ -1,17 +1,17 @@
 <script lang="ts">
-    import { changeURL, locale, sourceLocale } from "$lib/i18n";
+    import { getStores } from "$app/stores";
+    import { changeURL, locale, localizedPath } from "$lib/i18n";
     import { onDestroy, onMount } from "svelte";
 
     let lastLocale = $locale;
 
-    function localizedPath(path: string, lastLocale: string, newLocale: string): string {
-        return "/" + newLocale + path.substring(lastLocale.length + 1);
-    }
+    const { page } = getStores();
 
     let unsubscribe = () => {};
+    // Run inside onMount to be only run client-side
     onMount(() => {
-        locale.subscribe((newLocale) => {
-            changeURL(localizedPath(window.location.pathname, lastLocale, newLocale));
+        unsubscribe = locale.subscribe((newLocale) => {
+            changeURL(localizedPath($page.path, lastLocale, newLocale));
             lastLocale = newLocale;
         });
     });

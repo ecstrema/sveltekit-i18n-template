@@ -62,3 +62,8 @@ export function changeURL(url: string): void {
     }
     window.history.pushState({}, "", url);
 }
+
+
+export function localizedPath(path: string, lastLocale: string, newLocale: string): string {
+    return "/" + newLocale + path.substring(lastLocale.length + 1);
+}
