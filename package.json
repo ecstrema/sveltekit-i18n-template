@@ -9,6 +9,7 @@
     "clean": "rm -rf .svelte-kit && rm -rf build && rm src/generated/translations.ts",
     "deploy:gh": "node ./gh-pages-deploy.js",
     "deploy": "pnpm run rebuild && pnpm run deploy:gh",
+    "publish": "pnpm run deploy",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
