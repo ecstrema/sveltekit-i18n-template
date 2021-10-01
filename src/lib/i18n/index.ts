@@ -50,15 +50,3 @@ export const t = derived(locale, ($locale: Locale) => {
         return ((targetTranslations as LocaleType)[translation])(obj) as string;
     }
 });
-
-/**
- * Changes the current URL without reloading the page.
- * Pushes the new URL to history.
- */
-export function changeURL(url: string): void {
-    if (typeof history.pushState !== 'function') {
-        window.location.assign(url);
-        return;
-    }
-    window.history.pushState({}, "", url);
-}
