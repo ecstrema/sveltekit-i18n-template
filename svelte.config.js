@@ -1,5 +1,7 @@
 import preprocess from 'svelte-preprocess';
-import adapterStatic from '@sveltejs/adapter-static';
+import adapt from '@sveltejs/adapter-static';
+
+const production = process.env.NODE_ENV === 'production';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,11 +12,11 @@ const config = {
 
 	kit: {
 		paths: {
-			base: '/sveltekit-i18n-template',
+			base: production ? '/sveltekit-i18n-template' : '',
 		},
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		adapter: adapterStatic(),
+		adapter: adapt(),
 		appDir: 'internal',
 	}
 };
