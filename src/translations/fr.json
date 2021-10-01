@@ -1,6 +1,6 @@
 {
   "Hello World": "Bonjour Monde",
-  "interpolated": "Du texte ou j'interpole {count} fois",
+  "interpolated": "Du texte que j'interpole {count} fois",
   "time": "Il est maintenant {now, time}",
   "number": "Mon nombre préféré est {n, number}",
   "pluralized": "J'ai {count, plural,=1 {un chat} other {{count} chats}}",
