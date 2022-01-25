@@ -1,15 +1,14 @@
 # Sveltekit 18n
 
-Internationalization-enabled svelte-kit template with built-in i18n routing.
+Internationalization-enabled svelte-kit template with built-in i18n.
 
 ## Features
 
-- i18n routing 🚋
 - built-in translation store, no library required 🏡
-- translation are compiled for lightning speed updates ⚡
+- Powerful Typescript typing for autocomplete and error checking 📰
+- Translation are compiled for lightning speed updates ⚡
 - The default locale is the source code: no duplication 👁️
 - Builtin i18n-ally configuration 🔥
-- Typescript typing for autocomplete and error checking 📰
 
 ## Using the template
 
@@ -30,14 +29,23 @@ ni && nr dev
 With pnpm
 
 ```bash
-pnpm install && pnpn run dev
+pnpm install && pnpm run dev
 ```
 
 This will start a development server watching the translations as well as the source files for changes.
 
 ### Translating source code
 
-The code is written directly in the target language. You'll often not need an english translation. This saves time and effort. So instead of
+The code is written directly in the target language. You'll often not need an english translation. This saves time and effort. Yo write
+
+```typescript
+const hw = $t("Hello World");
+
+//fr.json
+{ "Hello World": "Bonjour Monde" }
+```
+
+Instead of
 
 ```typescript
 const hw = $t("helloWorld");
@@ -48,18 +56,16 @@ const hw = $t("helloWorld");
 { "helloWorld": "Bonjour Monde" }
 ```
 
-You can do:
+This has several advantages, including
 
-```typescript
-const hw = $t("Hello World");
+- Default content doesn't have to be fetched from an external resource, it's already available.
+- This means less bandwidth cost
+- It also means no javascript has to be run if the page is being viewed in its written language
+- Sometimes this even mean that no json file has to be generated and kept up to date for the written language.
 
-//fr.json
-{ "Hello World": "Bonjour Monde" }
-```
+Note that although the first is shorter, if you prefer to use the second way, it is also perfectly valid!
 
-Note that although the second is shorter, if you prefer to use the second way, it is also perfectly valid!
-
-Sometimes however, you'll have to use keys. There's typically 3 reasons you'd want to do so:
+Sometimes however, you'll have to use keys. There are typically 3 reasons you'd want to do so:
 
 - Reason 1: plurals and gender rules
 
