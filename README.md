@@ -36,7 +36,7 @@ This will start a development server watching the translations as well as the so
 
 ### Translating source code
 
-The code is written directly in the target language. You'll often not need an english translation. This saves time and effort. Yo write
+The code is written directly in the target language. You'll often not need an english translation. This saves time and effort. You write
 
 ```typescript
 const hw = $t("Hello World");
